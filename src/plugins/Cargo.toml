@@ -1,5 +1,5 @@
 [package]
-name = "tocken_id-plugins"
+name = "token_id-plugins"
 version = "0.1.0"
 authors = ["Xudong Huang <huangxu008@hotmail.com>"]
 

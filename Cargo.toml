@@ -1,9 +1,9 @@
 [package]
-name = "tocken_id"
+name = "token_id"
 version = "0.1.0"
 authors = ["Xudong Huang <huangxu008@hotmail.com>"]
 
 [dependencies]
-tocken_id-plugins = { path = "src/plugins" }
+token_id-plugins = { path = "src/plugins" }
 
 [workspace]

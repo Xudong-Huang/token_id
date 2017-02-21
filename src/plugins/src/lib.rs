@@ -7,8 +7,8 @@ use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
 use proc_macro::TokenStream;
 
-#[proc_macro_derive(TockenId)]
-pub fn tocken_id(input: TokenStream) -> TokenStream {
+#[proc_macro_derive(TokenId)]
+pub fn token_id(input: TokenStream) -> TokenStream {
     // Construct a string representation of the type definition
     let s = input.to_string();
 
@@ -23,7 +23,7 @@ pub fn tocken_id(input: TokenStream) -> TokenStream {
 
     // Build the impl
     let gen = quote! {
-        impl TockenId for #name {
+        impl TokenId for #name {
             const ID: u64 = #id;
         }
     };
