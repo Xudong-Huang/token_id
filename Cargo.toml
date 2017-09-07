@@ -7,3 +7,4 @@ authors = ["Xudong Huang <huangxu008@hotmail.com>"]
 token_id-plugins = { path = "src/plugins" }
 
 [workspace]
+members = ["src/plugins"]

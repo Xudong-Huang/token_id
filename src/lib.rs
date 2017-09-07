@@ -1,5 +1,6 @@
-#![feature(macro_reexport)]
+#![cfg_attr(nightly, feature(macro_reexport))]
 
+#[cfg(nightly)]
 #[macro_reexport(TokenId)]
 extern crate token_id_plugins;
 

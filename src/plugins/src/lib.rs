@@ -22,11 +22,11 @@ pub fn token_id(input: TokenStream) -> TokenStream {
     let id = hasher.finish();
 
     // Build the impl
-    let gen = quote! {
+    let gen = quote!(
         impl TokenId for #name {
             const ID: u64 = #id;
         }
-    };
+    );
 
     // println!("SS = {:?}", gen);
     // Return the generated impl
