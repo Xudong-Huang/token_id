@@ -1,22 +1,17 @@
 extern crate proc_macro;
-extern crate syn;
-#[macro_use]
-extern crate quote;
 
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+
 use proc_macro::TokenStream;
+use quote::quote;
 
 #[proc_macro_derive(TokenId)]
 pub fn token_id(input: TokenStream) -> TokenStream {
-    // Construct a string representation of the type definition
-    let s = input.to_string();
-
-    // Parse the string representation
-    let ast = syn::parse_macro_input(&s).unwrap();
+    let ast: syn::DeriveInput = syn::parse(input).unwrap();
 
     // calc the hash of the name
-    let name = &ast.ident;
+    let name = ast.ident;
     let mut hasher = DefaultHasher::new();
     name.hash(&mut hasher);
     let id = hasher.finish();
@@ -30,5 +25,5 @@ pub fn token_id(input: TokenStream) -> TokenStream {
 
     // println!("SS = {:?}", gen);
     // Return the generated impl
-    gen.parse().unwrap()
+    gen.into()
 }
