@@ -8,5 +8,5 @@ authors = ["Xudong Huang <huangxu008@hotmail.com>"]
 proc-macro = true
 
 [dependencies]
-syn = "0.15"
-quote = "0.6"
+syn = "1"
+quote = "1"
