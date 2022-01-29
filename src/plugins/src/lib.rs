@@ -18,7 +18,7 @@ pub fn token_id(input: TokenStream) -> TokenStream {
 
     // Build the impl
     let gen = quote!(
-        impl token_id::TokenId for #name {
+        impl TokenId for #name {
             const ID: u64 = #id;
         }
     );
